@@ -59,7 +59,7 @@ double y = 1;
 int step = 1;
 int fact = 1;
 
-while (y < Math.Pow(Math.E, x))
+while (y <= Math.Pow(Math.E, x))
 {
     fact = fact * step;
     y += Math.Pow(x, step) / fact;
@@ -83,9 +83,11 @@ for (int i = 100; i <= 999; i++)
 double x, y = 1;
 int fact = 1, step = 0;
 x = double.Parse(Console.ReadLine());
+
 step += 2;
 fact = fact * (-step) * (step - 1);
 y = y + Math.Pow(x, step) / fact;
+
 while (y < Math.Cos(x))
 {
     step += 2;
@@ -189,16 +191,29 @@ int nok;
 nok = a * b / nod;
 */
 
-/*                                                              //ДОДЕЛАТЬ ДОМА!!!!!!!!!!!!
-float x, y;                                                     //ЗАДАЧА 1.2!!!!!
-x = float.Parse(Console.ReadLine());
+                                                                 //ДОДЕЛАТЬ ДОМА!!!!!!!!!!!!
+double x, y;                                                     //ЗАДАЧА 1.2!!!!!
+x = double.Parse(Console.ReadLine());
 y = 0;
+int fact = 0;
+
 int k = 0;
-while (y != Math.Pow(Math.E, 1 / x))
-{
-    y += (2*k*x + 1) / 
+
+while (y <= Math.Pow(Math.E, 1 / x))                             //7,38906
+{                                                                //9
+    for (int i = 2 * k; i >= 0; i--)
+    {                                                            //1 + 3/2 +7/12
+        fact += i;
+    }
+    if (k == 0)
+    {                                                            // sinh= (e^2x-1)/(2e^x)
+        fact = 1;
+    }
+    y += ((2 * k * x) + 1) / (Math.Pow(x, 2 * k) * fact);
+    k++;
 }
-*/
+Console.WriteLine(y);
+
 
 
 /*
@@ -233,7 +248,7 @@ for (int i = 2; i <= N / 2; i++)
 
 /*
 int k, x1 = 1, x2 = 1;
-k = int.Parse(Console.ReadLine());
+k = int.Parse(Console.ReadLine());                      //1,1,2,3,5,8,13
 int x = 0;
 for (int i = 0; i < k; i++)
 {
@@ -246,18 +261,20 @@ Console.WriteLine(x);
 */
 
 
+
+/*
 double x, y;
 int k;
 
 x = double.Parse(Console.ReadLine());  
 
 if (x >= 1)
-{
+{  
     y = x / 3;
 }
 else
 {
     y = x;
 }
-
+*/
 
