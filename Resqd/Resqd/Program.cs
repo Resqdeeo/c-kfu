@@ -195,21 +195,17 @@ nok = a * b / nod;
 double x, y;                                                     //ЗАДАЧА 1.2!!!!!
 x = double.Parse(Console.ReadLine());
 y = 0;
-int fact = 0;
 
 int k = 0;
 
 while (y <= Math.Pow(Math.E, 1 / x))                             //7,38906
 {                                                                //9
-    for (int i = 2 * k; i >= 0; i--)
+    int fact = 1;
+    for (int i = 2 * k; i > 1; i--)
     {                                                            //1 + 3/2 +7/12
-        fact += i;
+        fact *= i;
     }
-    if (k == 0)
-    {                                                            // sinh= (e^2x-1)/(2e^x)
-        fact = 1;
-    }
-    y += ((2 * k * x) + 1) / (Math.Pow(x, 2 * k) * fact);
+    y += ((2 * k * x) + 1) / (Math.Pow(x, (2 * k)) * fact);
     k++;
 }
 Console.WriteLine(y);
