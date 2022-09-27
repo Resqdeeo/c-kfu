@@ -198,11 +198,11 @@ y = 0;
 
 int k = 0;
 
-while (y <= Math.Pow(Math.E, 1 / x))                             //7,38906
-{                                                                //9
+while (Math.Pow(Math.E, 1 / x) - y >= 0.01)                             
+{                                                                
     int fact = 1;
     for (int i = 2 * k; i > 1; i--)
-    {                                                            //1 + 3/2 +7/12
+    {                                                            
         fact *= i;
     }
     y += ((2 * k * x) + 1) / (Math.Pow(x, (2 * k)) * fact);
