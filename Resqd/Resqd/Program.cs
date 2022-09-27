@@ -91,9 +91,10 @@ while (y < Math.Cos(x))
     step += 2;
     fact = fact * (-step) * (step - 1);
     y = y + Math.Pow(x, step) / fact;
+}
 */
 
-
+/*
 double x, y;
 x = double.Parse(Console.ReadLine());
 y = double.Parse(Console.ReadLine());
@@ -141,3 +142,122 @@ else
 {
     Console.WriteLine("Точка не на фигуре");
 }
+*/
+
+
+/*
+int a, b;
+int nod = 1;
+
+a = int.Parse(Console.ReadLine());
+b = int.Parse(Console.ReadLine());
+
+if (a > b)
+{
+    for (int i = a; i >= 1; i--)
+    {
+        if (a % i == 0)
+        {
+            if ((b % i) == 0)
+            {
+                nod = i;
+                break;
+            }
+        }
+    }
+}
+else
+{
+    for (int i = b; i >= 1; i--)
+    {
+        if (b % i == 0)
+        {
+            if (a % i == 0)
+            {
+                nod = i;
+                break;
+            }
+        }
+    }
+}
+Console.WriteLine(nod);
+
+a = int.Parse(Console.ReadLine());
+b = int.Parse(Console.ReadLine());
+
+int nok;
+nok = a * b / nod;
+*/
+
+/*                                                              //ДОДЕЛАТЬ ДОМА!!!!!!!!!!!!
+float x, y;                                                     //ЗАДАЧА 1.2!!!!!
+x = float.Parse(Console.ReadLine());
+y = 0;
+int k = 0;
+while (y != Math.Pow(Math.E, 1 / x))
+{
+    y += (2*k*x + 1) / 
+}
+*/
+
+
+/*
+int N;
+int count;
+
+N = int.Parse(Console.ReadLine());
+
+for (int i = 2; i <= N / 2; i++)
+{
+    if (N % i == 0)
+    {
+        count = 0;
+        for (int j = 2; j <= i / 2; j++)
+        {
+            if (i % j == 0)
+            {
+                count += 1;
+                if (count > 0)
+                {
+                    break;
+                }
+            }
+        }
+        if (count == 0)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}
+*/
+
+/*
+int k, x1 = 1, x2 = 1;
+k = int.Parse(Console.ReadLine());
+int x = 0;
+for (int i = 0; i < k; i++)
+{
+    x = x1 + x2;
+    x2 = x1;
+    x1 = x;
+
+}
+Console.WriteLine(x);
+*/
+
+
+double x, y;
+int k;
+
+x = double.Parse(Console.ReadLine());  
+
+if (x >= 1)
+{
+    y = x / 3;
+}
+else
+{
+    y = x;
+}
+
+
