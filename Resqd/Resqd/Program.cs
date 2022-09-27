@@ -262,7 +262,7 @@ Console.WriteLine(x);
 
 
 
-/*
+/*                                                      //ДОДЕЛАТЬ!!!!!!!!!!!!!!! (5 задача)
 double x, y;
 int k;
 
