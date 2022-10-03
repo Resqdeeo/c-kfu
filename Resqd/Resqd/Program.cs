@@ -191,24 +191,27 @@ int nok;
 nok = a * b / nod;
 */
 
-                                                                 //ДОДЕЛАТЬ ДОМА!!!!!!!!!!!!
+//ДОДЕЛАТЬ ДОМА!!!!!!!!!!!!
+using System.Diagnostics;
+
 double x, y;                                                     //ЗАДАЧА 1.2!!!!!
 x = double.Parse(Console.ReadLine());
 y = 0;
-
+int fact = 1;
+double xznamenatel = 1;
+int step = 0;
 int k = 0;
 
+
 while (Math.Pow(Math.E, 1 / x) - y >= 0.01)                             
-{                                                                
-    int fact = 1;
-    for (int i = 2 * k; i > 1; i--)
-    {                                                            
-        fact *= i;
-    }
-    y += ((2 * k * x) + 1) / (Math.Pow(x, (2 * k)) * fact);
-    k++;
+{
+    y += ((2 * k * x) + 1) / (xznamenatel * fact);
+    xznamenatel *= x * x;
+    step += 2;
+    fact *= step * (step - 1);
+    k += 1;
 }
-Console.WriteLine(y);
+Console.WriteLine($"{y}, {Math.Pow(Math.E, 1 / x)}");
 
 
 
@@ -273,4 +276,3 @@ else
     y = x;
 }
 */
-
