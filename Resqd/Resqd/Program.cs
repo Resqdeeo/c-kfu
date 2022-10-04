@@ -212,7 +212,7 @@ while (Math.Pow(Math.E, 1 / x) - y >= 0.01)
     fact *= step * (step - 1);
     k += 1;
 }
-Console.WriteLine($"{y}, {Math.Pow(Math.E, 1 / x)}, {k}");
+Console.WriteLine($"{y}, {Math.Pow(Math.E, 1 / x)}");
 
 
 
