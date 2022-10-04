@@ -192,6 +192,7 @@ nok = a * b / nod;
 */
 
 //ДОДЕЛАТЬ ДОМА!!!!!!!!!!!!
+
 using System.Diagnostics;
 
 double x, y;                                                     //ЗАДАЧА 1.2!!!!!
@@ -211,7 +212,7 @@ while (Math.Pow(Math.E, 1 / x) - y >= 0.01)
     fact *= step * (step - 1);
     k += 1;
 }
-Console.WriteLine($"{y}, {Math.Pow(Math.E, 1 / x)}");
+Console.WriteLine($"{y}, {Math.Pow(Math.E, 1 / x)}, {k}");
 
 
 
@@ -276,3 +277,195 @@ else
     y = x;
 }
 */
+
+
+/*
+int n = 10;
+int[] arr = new int[n];
+
+Random r = new Random();
+
+
+for (int i = 0; i < n; i++)
+{
+    arr[i] = r.Next(-100, 101);
+}
+
+//arr[0] = 20;
+
+
+
+int sum = 0, kolPol = 0;
+int max = int.MinValue;
+//int max = arr[0];
+for (int i = 0; i < n; i++)
+{
+    Console.WriteLine($"a[{i}] = {arr[i]}");
+
+    sum += arr[i];
+
+
+    if (arr[i] > 0)
+        kolPol++;
+
+
+    if (arr[i] > max)
+        max = arr[i];
+}
+
+Console.WriteLine($"sum = {sum} kolPol = {kolPol} max = {max}");
+
+
+int[] mas = { -3, -5, -6, -3, -7, -65, -11, -13 };
+
+bool fl = false;   //Содержит ли массив отрицательное число
+int fl2 = 1;       //Все числа в массиве отрицательные
+
+
+for (int i = 0; i < mas.Length; i++)
+{
+    Console.WriteLine($"a[{i}] = {mas[i]}");
+    if (mas[i] < 0)
+        fl = true;
+
+    if (mas[i] >= 0)
+        fl2 = -1;
+}
+
+if (fl)
+    Console.WriteLine("Есть отрицательное число");
+else
+    Console.WriteLine("Нет отрицательных чисел");
+
+if (fl2 == 1)
+    Console.WriteLine("Все числа в массиве отрицательные");
+else
+    Console.WriteLine("Не все числа отрицательные");
+*/
+
+
+/*
+int n = int.Parse(Console.ReadLine());
+int[] a = new int[n];
+
+Random ran = new Random();
+
+for (int i = 0; i < n; i++)
+{
+    a[i] = ran.Next(-100, 101);
+}
+
+int max = int.MinValue;
+int min = int.MaxValue;
+
+for (int i = 0; i < n; i++)
+{
+    Console.WriteLine($"a[{i}] = {a[i]}");
+
+    if (a[i] < 0)
+    {
+        if (a[i] > max)
+            max = a[i];
+    }
+    else
+    {
+        if (a[i] < min)
+            min = a[i];
+    }
+}
+Console.WriteLine($"min = {min} max = {max}");
+*/
+
+
+/*
+int n = int.Parse(Console.ReadLine());
+int[] a = new int[n];
+
+Random ran = new Random();
+
+for (int i = 0; i < n; i++)
+{
+    a[i] = ran.Next(-100, 101);
+}
+
+int max = int.MinValue;
+int index = -1;
+
+for (int i = 0; i < n; i++)
+{
+    Console.WriteLine($"a[{i}] = {a[i]}");
+    
+    if (a[i] > max)
+    {
+        max = a[i];
+        index = i;
+    }
+}
+Console.WriteLine($"max = {max} index = {index}");
+*/
+
+
+
+/*
+int[] minim = { -65, -5, -6, -3, -7, -65, -65, -11 };
+int min = int.MaxValue;
+int k = 1;
+int predp = 0, posled = 0;
+
+for (int i = 0; i < minim.Length; i++)
+{
+    Console.WriteLine($"minim[{i}] = {minim[i]}");
+    if (minim[i] == min)
+    {
+        k += 1;
+        predp = posled;
+        posled = i;
+    }
+    if (minim[i] < min)
+    {
+        min = minim[i];
+        k = 1;
+    }
+}
+Console.WriteLine($"min = {min} k = {k} predp = {predp}");  
+*/
+
+
+
+/*
+int n = int.Parse(Console.ReadLine());               //ДОДЕЛАТЬ ДОМА (ЗАДАЧА 4 НА ПРОВЕРКУ ПРОСТЫХ ЧИСЕЛ В МАССИВЕ)!!!
+int[] a = new int[n];
+
+Random ran = new Random();
+
+for (int i = 0; i < n; i++)
+{
+    a[i] = ran.Next(-100, 101);
+}
+
+bool fl = false;
+int count;
+
+for (int i = 0; i < n; i++)
+{
+    Console.WriteLine($"a[{i}] = {a[i]}");
+    count = 0;
+    for (int j = 2; j < a[i] / 2; j++)
+    {
+        if (a[i] % j == 0)
+            count++;
+    }
+
+    if (count == 0)
+    {
+        fl = true;
+        break;
+    }
+}
+if (fl)
+    Console.WriteLine("Простые числа есть");
+else
+    Console.WriteLine("Нету простых чисел");
+*/
+
+
