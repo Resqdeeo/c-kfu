@@ -191,10 +191,8 @@ int nok;
 nok = a * b / nod;
 */
 
-//ДОДЕЛАТЬ ДОМА!!!!!!!!!!!!
-
-using System.Diagnostics;
-
+//ДОДЕЛАТЬ ДОМА!!!!!!!!!!!
+/*
 double x, y;                                                     //ЗАДАЧА 1.2!!!!!
 x = double.Parse(Console.ReadLine());
 y = 0;
@@ -213,7 +211,7 @@ while (Math.Pow(Math.E, 1 / x) - y >= 0.01)
     k += 1;
 }
 Console.WriteLine($"{y}, {Math.Pow(Math.E, 1 / x)}");
-
+*/
 
 
 /*
@@ -469,3 +467,144 @@ else
 */
 
 
+/*
+int k = int.Parse(Console.ReadLine());
+int[] a = new int[k];
+
+Random rnd = new Random();
+int c = 0;
+
+for(int i = 0; i < k; i++)
+{
+    a[i] = rnd.Next(1000);
+    Console.WriteLine($"a[{i}] = {a[i]}");
+}
+
+Console.WriteLine();
+for (int i = 0; i < k / 2; i++)
+{
+    c = a[i];
+    a[i] = a[k - i - 1];
+    a[k - i - 1] = c;
+}
+
+for(int i = 0; i < k; i++)
+{
+    Console.WriteLine($"a[{i}] = {a[i]}");
+}
+*/
+
+
+/*
+int c = int.Parse(Console.ReadLine());
+int[] a = new int[c];
+
+Random rndm = new Random();
+
+
+for (int i = 0; i < c; i++)
+{
+    a[i] = rndm.Next(100); 
+    Console.WriteLine($"a[{i}] = {a[i]}");
+}
+
+int k = int.Parse(Console.ReadLine());
+
+for (int i = 0; i < c; ++i)
+{
+    int aLast = a[k - 1];
+    for (int j = k - 1; j > 0; j--)
+    {
+        a[j] = a[j - 1];
+    }
+    a[0] = aLast;
+}
+
+for (int i = 0; i < k; i++)
+{
+    Console.WriteLine($"a[{i}] = {a[i]}");
+}
+*/
+
+
+/*
+int c = int.Parse(Console.ReadLine());
+int[] a = new int[c];
+
+Random rndm = new Random();
+bool fl = true;
+
+for (int i = 0; i < c; i++)
+{
+    a[i] = rndm.Next(100);
+    Console.WriteLine($"a[{i}] = {a[i]}");
+}
+
+for(int i = 0; i < c - 1; i++)
+{
+    if (a[i + 1] < a[i])
+    {
+        fl = false;
+    }
+}
+if (fl)
+    Console.WriteLine("Да, упорядочен");
+else
+    Console.WriteLine("Нет, не упорядочен");
+*/
+
+
+/*
+int[] a = new int[] { 1, 2, 3, 4 };
+int[] b = new int[] { 6, 7, 8, 8, 10, 12 };
+
+var na = a.Length;
+var nb = b.Length;
+
+int[] c = new int[na + nb];
+
+int i = 0, j = 0, k = 0;
+
+while (i < na && j < nb)
+{
+    if (a[i] < b[j])
+    {
+        c[k++] = a[i++];
+    }
+    else
+        c[k++] = b[j++];
+}
+
+if (i == na)       //закончился массив а
+{
+    for (i = j; i < nb; i++)
+    {
+        {
+            c[k++] = b[i];
+        }
+    }
+}
+else               //закончился массив b
+{
+    for (j = i; j < na; j++)
+    {
+        c[k++] = a[j];
+    }
+}
+
+
+for(i = 0; i < c.Length; i++)
+{
+    Console.WriteLine($"c[{i}] = {c[i]}");
+}
+*/
+
+
+
+int[] a = new int[] { 1, 1, 2, 3, 5, 8 };
+int[] b = new int[] { 2, 5, 9, 11 };
+
+int na = a.Length;
+int nb = b.Length;
+
+int[] c = new int[];
