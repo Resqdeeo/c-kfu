@@ -600,7 +600,7 @@ for(i = 0; i < c.Length; i++)
 */
 
 
-
+/*
 int[] a = new int[] { 1, 1, 2, 3, 5, 8 };
 int[] b = new int[] { 2, 5, 9, 11 };
 
@@ -608,3 +608,359 @@ int na = a.Length;
 int nb = b.Length;
 
 int[] c = new int[];
+*/
+
+
+
+/*
+int n = 6, m = 6;
+
+int[,] matr = new int[n, m];
+
+Random r = new Random();
+//int[][] mmas = new int[n][];
+//for(int i = 0; i < n; i++)
+//    mmas[i] = new int[r.Next(8)];
+
+
+
+for (int i = 0; i < n; i++)
+    for (int j = 0; j < m; j++)
+        matr[i, j] = r.Next(100);
+
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+        Console.Write($"{matr[i, j],4}");
+    Console.WriteLine();
+}
+
+for (int i = 0; i < n; i++)
+{
+    int max = matr[i, 0];
+    for (int j = 1; j < m; j++)
+        if (max < matr[i, j])
+            max = matr[i, j];
+    Console.WriteLine($"{i} row - max = {max}");
+}
+for (int j = 0; j < m; j++)
+{
+    int min = matr[0, j];
+    for (int i = 1; i < n; i++)
+        if (min > matr[i, j])
+            min = matr[i, j];
+    Console.WriteLine($"{j} column - min = {min}");
+}
+
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = i + 1; j < m; j++)
+    {
+        var t = matr[i, j];
+        matr[i, j] = matr[j, i];
+        matr[j, i] = t;
+    }
+}
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+        Console.Write($"{matr[i, j],4}");
+    Console.WriteLine();
+}
+
+
+//Console.WriteLine(matr.Rank);
+//Console.WriteLine(matr.GetLength(0));
+//Console.WriteLine(matr.GetLength(1));
+*/
+
+
+
+
+/*
+int n = 3, m = 3;
+Random r = new Random();
+int[,] matr = new int[n, m];
+ 
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+        matr[i, j] = r.Next(100);
+ 
+    }
+}
+ 
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+ 
+        Console.Write($"{matr[i, j]} ");
+    }
+    Console.WriteLine();
+}
+Console.WriteLine();
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+ 
+        Console.Write($"{matr[m-1-j, i]} ");
+    }
+    Console.WriteLine();
+}
+ 
+ 
+ 
+ 
+int n = 3, m = 3, summa = 0;
+Random r = new Random();
+int[,] matr = new int[n, m];
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+        matr[i, j] = r.Next(100);
+        if (i == 0 || j == 0 || i == (n - 1) || j == (m - 1))
+        {
+            summa += matr[i, j];
+        }
+    }
+}
+ 
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+        Console.Write($"{matr[i, j]} ");
+    }
+    Console.WriteLine();
+}
+ 
+Console.WriteLine(summa);
+ 
+int n = 3, m = 3;
+int[,] matr = new int[n, m];
+Random r = new Random();
+ 
+int summ = 0;
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+        matr[i, j] = r.Next(100);
+        if (i == j || (i == n - j - 1))
+        {
+            summ += matr[i, j];
+        }
+    }
+}
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+        Console.Write($"{matr[i, j]} ");
+    }
+    Console.WriteLine();
+}
+*/
+
+/*
+int n = 3, m = 5;
+int f = 5, k = 2;
+int[,] matr = new int[n, m];
+int[,] matr2 = new int[n, m];
+Random r = new Random();
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+        matr[i, j] = r.Next(100);
+    }
+}
+
+for (int i = 0; i < f; i++)
+{
+    for (int j = 0; j < k; j++)
+    {
+        matr2[i, j] = r.Next(100);
+    }
+}
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < k; j++)
+    {
+
+    }
+}
+*/
+
+
+
+/*
+int n = int.Parse(Console.ReadLine());
+int m = int.Parse(Console.ReadLine());
+int k = int.Parse(Console.ReadLine());
+int[,] matrixA = new int[m, n];
+int[,] matrixB = new int[n, k];
+Random rand = new Random();
+
+
+
+for (int i = 0; i < m; i++)
+{
+    for (int j = 0; j < n; j++)
+    {
+        matrixA[i, j] = rand.Next(10);
+    }
+}
+
+
+for (int i = 0; i < m; i++)
+{
+    for (int j = 0; j < n; j++)
+    {
+        Console.Write($"{matrixA[i, j]} ");
+    }
+    Console.WriteLine();
+}
+
+Console.WriteLine();
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < k; j++)
+    {
+        matrixB[i, j] = rand.Next(10);
+    }
+}
+
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < k; j++)
+    {
+        Console.Write($"{matrixB[i, j]} ");
+    }
+    Console.WriteLine();
+}
+
+Console.WriteLine();
+
+int[,] matrixC = new int[m, k];
+
+for (int i = 0; i < m; i++)
+{
+    for (int j = 0; j < k; j++)
+    {
+        for (int v = 0; v < n; v++)
+        {
+            matrixC[i, j] += matrixA[i, v] * matrixB[v, j];
+        }
+    }
+}
+
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+        Console.Write($"{matrixC[i, j]} ");
+    }
+    Console.WriteLine();
+}
+*/
+
+
+/*
+int n = int.Parse(Console.ReadLine());
+int m = int.Parse(Console.ReadLine());
+int[,] matrix = new int[m, n];
+int c = 0;
+
+Random rand = new Random();
+
+
+
+for (int i = 0; i < m; i++)
+{
+    for (int j = 0; j < n; j++)
+    {
+        matrix[i, j] = rand.Next(10);
+    }
+}
+
+
+for (int i = 0; i < m; i++)
+{
+    for (int j = 0; j < n; j++)
+    {
+        Console.Write($"{matrix[i, j]} ");
+    }
+    Console.WriteLine();
+}
+
+Console.WriteLine();
+
+
+for (int i = 0; i <= m - 2; i = i + 2)
+{
+    for (int j = 0; j < n; i++)
+    {
+        c = matrix[i, j];
+        matrix[i, j] = matrix[i + 1, j];
+        matrix[i + 1, j] = c;
+    }
+}
+*/
+
+int sum = 0;
+int n = int.Parse(Console.ReadLine());
+int[] massive = new int[n];
+Random random = new Random();
+
+for (int i = 0; i < n; i++)
+{
+    massive[i] = random.Next(100);
+    Console.WriteLine($"a[{i}] = {massive[i]}");
+}
+
+int max = int.MinValue;
+int min = int.MaxValue;
+int maxindex = 0;
+int minindex = 0;
+
+for (int i = 0; i < n; i++)
+{
+    if (massive[i] > max)
+    {
+        max = massive[i];
+        maxindex = i;
+    }
+    if (massive[i] < min)
+    {
+        min = massive[i];
+        minindex = i;
+    }
+}
+
+if (maxindex > minindex)
+{
+    for (int i = minindex + 1; i < maxindex; i++)
+    {
+        sum += massive[i];
+    }
+}
+else
+{
+    for (int i = maxindex + 1; i < minindex; i++)
+    {
+        sum += massive[i];
+    }
+}
+Console.WriteLine(sum);
