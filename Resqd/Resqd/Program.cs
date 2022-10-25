@@ -78,6 +78,5 @@ using (StreamReader reader = new StreamReader(@"D:\Temp\wordscnt.txt"))
     {
         Console.WriteLine(item);
     }
-
+    Console.WriteLine(count.Length);
 }
-Console.WriteLine($"Количество слов - {countwords}");
