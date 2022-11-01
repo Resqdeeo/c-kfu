@@ -1,7 +1,6 @@
-﻿
 using System;
 using System.Reflection.PortableExecutable;
-
+ 
 int[,] GetMatrix(int n)                              //Генерация матрицы
 {
     Random r = new Random();
@@ -11,8 +10,8 @@ int[,] GetMatrix(int n)                              //Генерация мат
             matr[i, j] = r.Next(100);
     return matr;
 }
-
-
+ 
+ 
 void WriteInFile(int[,] matrix, string path)        //Вписывание в файл
 {
     using (StreamWriter writer = new StreamWriter(path))
@@ -28,8 +27,8 @@ void WriteInFile(int[,] matrix, string path)        //Вписывание в ф
         }
     }
 }
-
-
+ 
+ 
 int[,] ReadFromFile(string path)        //Считывание матрицы из файла
 {
     using (StreamReader reader = new StreamReader(@"D:\Temp\test.txt"))
@@ -37,9 +36,9 @@ int[,] ReadFromFile(string path)        //Считывание матрицы и
         var mn = reader.ReadLine().Split(' ');
         int m = int.Parse(mn[0]);
         int n = int.Parse(mn[1]);
-
+ 
         var matr = new int[m, n];
-
+ 
         for (int i = 0; i < m; i++)
         {
             var row = reader.ReadLine().Split(' ');
@@ -51,19 +50,19 @@ int[,] ReadFromFile(string path)        //Считывание матрицы и
         return matr;
     }
 }
-
-
+ 
+ 
 void PrintMatr(int[,] matr)             //Вывод матрицы
 {
     for (int i = 0; i < matr.GetLength(0); i++)
     {
         for (int j = 0; j < matr.GetLength(1); j++)
-            Console.Write($"{matr[i, j],3}");
+            Console.Write($"{matr[i, j],4}");
         Console.WriteLine();
     }
 }
-
-
+ 
+ 
 int OddNumber()                         //Генерация случайного нечетного числа
 {
     Random random = new Random();
@@ -72,11 +71,11 @@ int OddNumber()                         //Генерация случайног�
     {
         number = random.Next(100);
     }
-    while (number % 2 != 0);
+    while (number % 2 == 0);
     return number;
 }
-
-
+ 
+ 
 int[,] GetMatrixOfOddNumbers(int n)     //Генерация матрицы из нечетных чисел
 {
     Random r = new Random();
@@ -86,8 +85,8 @@ int[,] GetMatrixOfOddNumbers(int n)     //Генерация матрицы из
             matr[i, j] = OddNumber();
     return matr;
 }
-
-
+ 
+ 
 void CheckMagicSquare(int[,] matrix)    //Проверка матрицы на то, является ли она магическим квадратом
 {
     int n = matrix.GetLength(0);
@@ -119,8 +118,8 @@ void CheckMagicSquare(int[,] matrix)    //Проверка матрицы на �
     else
         Console.WriteLine("Это матрица - магический квадрат");
 }
-
-
+ 
+ 
 int[,] SumOfMatrix(int[,] matrone, int[,] matrtwo)  //Сумма двух матриц
 {
     var n = matrtwo.GetLength(0);
@@ -130,8 +129,8 @@ int[,] SumOfMatrix(int[,] matrone, int[,] matrtwo)  //Сумма двух мат
             matrix[i, j] = matrone[i, j] + matrtwo[i, j];
     return matrix;
 }
-
-
+ 
+ 
 bool IsPrime(int number)                    //Проверка числа на простоту
 {
     for (int i = 2; i < number; i++)
@@ -141,15 +140,15 @@ bool IsPrime(int number)                    //Проверка числа на �
     }
     return true;
 }
-
-
+ 
+ 
 void PrimePillar(int[,] matrix)            //Вывод столбца с наибольшим кол-ком простых чисел
 {
     var maxj = 0;
+    var maxCount = 0;
     for (int j = 0; j < matrix.GetLength(1) ; j++)
     {
         int count = 0;
-        var maxCount = 0;
         for (int i = 0; i < matrix.GetLength(0); i++)
             if (IsPrime(matrix[i, j]))
             {
@@ -164,19 +163,18 @@ void PrimePillar(int[,] matrix)            //Вывод столбца с наи
     for (int i = 0; i < matrix.GetLength(0); i++)
         Console.WriteLine(matrix[i, maxj]);
 }
-
-
-
-int size = 5;
-var firstmatr = GetMatrixOfOddNumbers(size);
-PrintMatr(firstmatr);
-Console.WriteLine();
-var secondmatr = ReadFromFile(@"D:\Temp\test.txt");
-PrintMatr(secondmatr);
-CheckMagicSquare(secondmatr);
-
-var thirdmatr = SumOfMatrix(firstmatr, secondmatr);
-PrimePillar(thirdmatr);
-
-
-
+ 
+ 
+var matrix = GetMatrix(5);
+WriteInFile(matrix, @"D:\Temp\test.txt");
+var newmatrix = ReadFromFile(@"D:\Temp\test.txt");
+PrintMatr(newmatrix);
+CheckMagicSquare(newmatrix);
+ 
+var oddmatr = GetMatrixOfOddNumbers(5);
+PrintMatr(oddmatr);
+ 
+var summatr = SumOfMatrix(newmatrix, oddmatr);
+PrintMatr(summatr);
+ 
+PrimePillar(summatr);
