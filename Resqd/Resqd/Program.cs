@@ -2,7 +2,7 @@
 using System;
 using System.Reflection.PortableExecutable;
 
-int[,] GetMatrix(int n)
+int[,] GetMatrix(int n)                              //Генерация матрицы
 {
     Random r = new Random();
     int[,] matr = new int[n, n];
@@ -13,7 +13,7 @@ int[,] GetMatrix(int n)
 }
 
 
-void WriteInFile(int[,] matrix, string path)
+void WriteInFile(int[,] matrix, string path)        //Вписывание в файл
 {
     using (StreamWriter writer = new StreamWriter(path))
     {
