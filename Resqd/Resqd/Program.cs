@@ -1,82 +1,79 @@
-﻿/*int ArrSum(ref int[] mas)
+﻿using System.Runtime.InteropServices;
+
+int[] GenerateMas(int n)
 {
-    int s = 0;
+    Random r = new Random();
+    int[] mas = new int[n];
+    for(int i = 0; i < n; i++)
+    {
+        mas[i] = r.Next(-100, 100);
+    }
+    return mas; 
+}
+
+
+
+void PrintMas(int[] mas)
+{
     for (int i = 0; i < mas.Length; i++)
-    {
-        s += mas[i];
-    }
-    mas = new int[5] { 1, 1, 1, 1, 1 };
-    return s;
+        Console.Write($"{mas[i]} ");  
+    Console.WriteLine();
 }
 
 
-int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
-Console.WriteLine(ArrSum(ref arr));
-
-
-foreach (int k in arr)
+void BubbleSort(int[] mas)
 {
-    Console.WriteLine(k);                      
-}
-*/
-
-/*
-List<char> lst = new List<char>();
-Dictionary<char, int> symbols = new Dictionary<char, int>();
-
-
-using (StreamReader reader = new StreamReader(@"D:\Temp\text.txt"))
-{
-    var str = reader.ReadToEnd();
-    foreach(char ch in str)
+    //int n = mas.Length;
+    //for(int k = n - 1; k > 0; k--)
+    //    for(int i = 0; i < k; i++)
+    //        if (mas[i] > mas[i + 1])
+    //        {
+    //            var t = mas[i];
+    //            mas[i] = mas[i + 1];
+    //            mas[i + 1] = t;
+    //        }
+    int n = mas.Length;
+    bool fl = true;
+    while(fl)
     {
-        if(Char.IsLetter(ch))
-        {
-            if (!lst.Contains(ch))
+        fl = false;
+        for (int i = 0; i < n - 1; i++)
+            if (mas[i] < mas[i + 1])
             {
-                lst.Add(ch);
-            }
-            if(!symbols.Keys.Contains(ch))
-            {
-                symbols.Add(ch, 1);
-            }
-            else
-            {
-                int k = symbols[ch];
-                symbols[ch] += 1;
-            }
-        }
+                var t = mas[i];
+                mas[i] = mas[i + 1];
+                mas[i + 1] = t;
+                fl = true;
+            }      
     }
 }
 
-foreach(var ch in lst)
+
+int GetMaxInd(int[] mas, int n)
 {
-    Console.Write(ch);
+    int iMax = 0;
+    for (int i = 1; i < n; i++)
+        if (mas[i] > mas[iMax])
+            iMax = i;
+    return iMax;
 }
 
-foreach(char ch in symbols.Keys)
+
+void TradeSort(int[] mas)
 {
-    Console.WriteLine($"{ch} - {symbols[ch]}");
-}
-
-
-foreach(var k in symbols.Values)
-{
-    Console.WriteLine(k);
-}
-*/
-
-
-
-
-
-using (StreamReader reader = new StreamReader(@"D:\Temp\wordscnt.txt"))
-{
-    string words = await reader.ReadToEndAsync();
-    string[] count = words.Split(new char[] { ' ', '?', '\n', ',', '.', '\t', '\r'  },StringSplitOptions.RemoveEmptyEntries);
-    foreach(var item in count)
+    int n = mas.Length;
+    for (int k = n - 1; k > 0; k--)
     {
-        Console.WriteLine(item);
+        var indexmax = GetMaxInd(mas, k);
+        var t = mas[indexmax];
+        mas[indexmax] = mas[k - 1];
+        mas[k - 1] = t;
     }
-    Console.WriteLine(count.Length);
+    
 }
+
+int N = 20;
+int[] arr = GenerateMas(N);
+PrintMas(arr);
+TradeSort(arr);
+PrintMas(arr);
