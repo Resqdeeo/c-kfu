@@ -16,17 +16,17 @@ namespace Resqd
             //Console.WriteLine(comp2.Rez);
             //Console.WriteLine(comp1);
 
-            Time Nikita = new Time(48, 72, 63);
-            Time Marat = new Time(1);
-            Time Alfred = new Time(48, 72, 69);
+            Time Time1 = new Time(48, 72, 63);
+            Time Time2 = new Time(1);
+            Time Time3 = new Time(48, 72, 69);
 
-            Console.WriteLine(Nikita);
-            Console.WriteLine(Marat);
-            Console.WriteLine(Alfred);
-            Console.WriteLine(Nikita.InSecond());
-            Console.WriteLine(Alfred.InSecond());
-            Console.WriteLine(Nikita + Marat);
-            Console.WriteLine(Nikita - Alfred);
+            Console.WriteLine(Time1);
+            Console.WriteLine(Time2);
+            Console.WriteLine(Time3);
+            Console.WriteLine(Time1.InSecond());
+            Console.WriteLine(Time2.InSecond());
+            Console.WriteLine(Time1 + Time2);
+            Console.WriteLine(Time1 - Time3);
         }
     }
 }
