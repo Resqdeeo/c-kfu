@@ -135,7 +135,7 @@ namespace Resqd
         }
 
 
-        public static Fraction operator +(Fraction f1, int a)
+        public static Fraction operator+(Fraction f1, int a)
         {
             var n = f1.Numerator + a * f1.Denominator;
             var d = f1.Denominator;
@@ -143,7 +143,7 @@ namespace Resqd
         }
 
 
-        public static Fraction operator +(int a, Fraction f1)
+        public static Fraction operator+(int a, Fraction f1)
         {
             return f1 + a;
         }
