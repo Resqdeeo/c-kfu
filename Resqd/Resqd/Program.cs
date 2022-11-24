@@ -34,7 +34,7 @@ namespace Resqd
             //{
             //    Console.WriteLine(Time1 / 0);
             //}
-            //catch(Exception e)
+            //catch (Exception e)
             //{
             //    Console.WriteLine(e.Message);
             //}
