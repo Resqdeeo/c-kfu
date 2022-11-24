@@ -19,17 +19,22 @@ namespace Resqd
             Time Time1 = new Time(48, 72, 63);
             Time Time2 = new Time(1);
             Time Time3 = new Time(48, 72, 69);
+            Time Time4 = new Time(48, 72, 69);
 
             Console.WriteLine(Time1);
             Console.WriteLine(Time2);
             Console.WriteLine(Time3);
             Console.WriteLine(Time1.InSecond());
             Console.WriteLine(Time2.InSecond());
-            Console.WriteLine(Time2.InSecond());
+            Console.WriteLine(Time3.InSecond());
             Console.WriteLine(Time1 + Time2);
             Console.WriteLine(Time1 - Time3);
             Console.WriteLine(Time2 * 100);
             Console.WriteLine(3 * Time3);
+            Console.WriteLine(Time1 > Time3);
+            Console.WriteLine(Time2 <= Time3);
+            Console.WriteLine(Time4 >= Time3);
+            Console.WriteLine(Time4 != Time3);
             //try
             //{
             //    Console.WriteLine(Time1 / 0);
@@ -38,7 +43,8 @@ namespace Resqd
             //{
             //    Console.WriteLine(e.Message);
             //}
-            Console.WriteLine(Time1 / 0);
+            //Console.WriteLine(Time1 / 0);
+            //Console.WriteLine(Time2 / 2);
         }
     }
 }

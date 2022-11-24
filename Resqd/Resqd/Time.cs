@@ -133,6 +133,41 @@ namespace Resqd
         }
 
 
+        public static bool operator >(Time t1, Time t2)
+        {
+            return t1.InSecond() > t2.InSecond();
+        }
+
+
+        public static bool operator <(Time t1, Time t2)
+        {
+            return t1.InSecond() < t2.InSecond();
+        }
+
+
+        public static bool operator >=(Time t1, Time t2)
+        {
+            return t1.InSecond() >= t2.InSecond();
+        }
+
+
+        public static bool operator <=(Time t1, Time t2)
+        {
+            return t1.InSecond() <= t2.InSecond();
+        }
+
+
+        public static bool operator ==(Time t1, Time t2)
+        {
+            return t1.InSecond() == t2.InSecond();
+        }
+
+
+        public static bool operator !=(Time t1, Time t2)
+        {
+            return !(t1 == t2);
+        }
+
         public override string ToString()
         {
             if (Hours < 10 && Minutes < 10 && Seconds < 10)

@@ -125,7 +125,7 @@ namespace Resqd
         }
 
 
-        //f3 = f1 + f2
+        //f3 = f1 + f2 8889878
 
         public static Fraction operator+(Fraction f1, Fraction f2)
         {
