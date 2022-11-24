@@ -30,14 +30,15 @@ namespace Resqd
             Console.WriteLine(Time1 - Time3);
             Console.WriteLine(Time2 * 100);
             Console.WriteLine(3 * Time3);
-            try
-            {
-                Console.WriteLine(Time1 / 0);
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            //try
+            //{
+            //    Console.WriteLine(Time1 / 0);
+            //}
+            //catch(Exception e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //}
+            Console.WriteLine(Time1 / 0);
         }
     }
 }
