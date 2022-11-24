@@ -90,6 +90,49 @@ namespace Resqd
         }
 
 
+        public static Time operator *(Time t1, int a)
+        {
+            int seconds;
+            if ((t1.InSecond() != 0) && a != 0)
+            {
+                seconds = t1.InSecond() * a;
+            }
+            else seconds = 0;
+            return new Time(seconds);
+        }
+
+
+        public static Time operator *(int a, Time t1)
+        {
+            int seconds;
+            if (a != 0 && (t1.InSecond() != 0))
+            {
+                seconds = a * t1.InSecond();
+            }
+            else seconds = 0;
+            return new Time(seconds);
+        }
+
+
+        public static Time operator /(Time t1, int a)
+        {
+            int seconds;
+            if (a == 0)
+            {
+                throw new ArgumentException("На ноль делить нельзя!");
+            }
+            else if ((t1.InSecond() == 0) && a != 0)
+            {
+                seconds = 0;
+            }
+            else
+            {
+                seconds = t1.InSecond() / a;
+            }
+            return new Time(seconds);
+        }
+
+
         public override string ToString()
         {
             if (Hours < 10 && Minutes < 10 && Seconds < 10)
