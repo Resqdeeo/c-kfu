@@ -76,7 +76,7 @@ namespace Resqd
 
         public void Div(Complexing comp1, Complexing comp2)
         {
-            this.inz;
+            //this.inz;
         }
 
 

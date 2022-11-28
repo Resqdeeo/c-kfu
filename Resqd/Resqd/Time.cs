@@ -16,45 +16,66 @@ namespace Resqd
         public int Hours
         {
             get { return hours; }
-            set { hours = value; }      
+            set
+            {
+                if (value > 23)
+                {
+                    hours = value % 24;
+                }
+                else hours = value;
+            }
         }
 
 
-        public int Minutes  
+        public int Minutes
         {
             get { return minutes; }
-            set { minutes = value; }
+            set
+            {
+                if (value >= 60)
+                {
+                    minutes = value % 60;
+                    Hours += value / 60;
+                }
+                else minutes = value;
+            }
         }
 
 
         public int Seconds
         {
             get { return seconds; }
-            set { seconds = value; }
+            set
+            {
+                if (value >= 60)
+                {
+                    seconds = value % 60;
+                    Minutes += value / 60;
+                    Hours += Minutes / 60;
+                }
+                else seconds = value;
+            }
         }
 
 
         public Time(int h, int m, int s)
         {
-            Hours = (h + (m / 60) + (s / 3600)) % 24;
-            Minutes = ((m % 60) + ((s % 3600) / 60)) % 60;
-            Seconds = (s % 3600) % 60;
+            Hours = h;
+            Minutes = m;
+            Seconds = s;
         }
 
 
         public Time(int h, int m)
         {
-            Hours = (h + (m / 60)) % 24;
-            Minutes = m % 60;
-            Seconds = 0;
+            Hours = h;
+            Minutes = m;
         }
 
 
         public Time(int s)
         {
-            Hours = s / 3600;
-            Minutes = (s % 3600) / 60;
-            Seconds = (s % 3600) % 60;
+            Seconds = s;
         }
 
 
@@ -165,7 +186,7 @@ namespace Resqd
 
         public static bool operator !=(Time t1, Time t2)
         {
-            return !(t1 == t2);
+            return t1.InSecond() != t2.InSecond();
         }
 
         public override string ToString()
